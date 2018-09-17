@@ -28,8 +28,6 @@ export class AddressComponent implements OnInit, OnDestroy {
   countries$: Observable<Country[]>;
   subscriptionList$: Array<Subscription> = [];
   orderNumber$: Observable<string>;
-  orderNumber
-
 
   constructor(private store: Store<AppState>,
     private userActions: UserActions,
@@ -81,7 +79,6 @@ export class AddressComponent implements OnInit, OnDestroy {
       this.store.select(getOrderId)
         .subscribe(orderId => {
           this.store.dispatch(this.checkOutActions.getShippingPreferencess(orderId, []))
-          // this.router.navigate(['/checkout', 'payment']);
         })
     );
 
